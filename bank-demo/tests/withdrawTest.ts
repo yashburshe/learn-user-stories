@@ -48,3 +48,12 @@ try {
 } catch (e) {
   console.log("Scenario 4 passed");
 }
+
+// Scenario 5 : unsuccessful withdrawal of money due to negative amount
+
+try {
+  bank.withdrawMoney(2345678901, -1000);
+  console.log("Scenario 5 failed");
+} catch (e) {
+  console.log("Scenario 5 passed");
+}

@@ -91,6 +91,10 @@ export class Bank implements BankType {
     accountNumber: number,
     amount: number
   ): AccountType | undefined {
+    if (amount < 0) {
+      throw new Error("Amount cannot be negative");
+    }
+
     if (this.isAccountNumberInvalid(accountNumber)) {
       throw new Error("Invalid account number");
     }
