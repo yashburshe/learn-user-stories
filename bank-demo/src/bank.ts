@@ -107,4 +107,17 @@ export class Bank implements BankType {
       throw new Error("Account not found");
     }
   }
+
+  checkBalance(accountNumber: number): number {
+    if (this.isAccountNumberInvalid(accountNumber)) {
+      throw new Error("Invalid account number");
+    }
+
+    const account = this.findAccountById(accountNumber);
+    if (account) {
+      return account.balance;
+    } else {
+      throw new Error("Account not found");
+    }
+  }
 }
