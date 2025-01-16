@@ -1,8 +1,12 @@
 export type AccountType = {
-    id: number,
-    balance: number
-}
+  id: number;
+  balance: number;
+};
 
 export interface BankType {
-    createAccount(username: string, age: number, accountNumber: number): AccountType
+  createAccount(
+    username: string,
+    age: number,
+    accountNumber: number
+  ): AccountType;
 }
