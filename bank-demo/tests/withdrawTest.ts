@@ -13,7 +13,11 @@ const bank = new Bank(accounts, usernames);
 
 try {
   bank.withdrawMoney(1234567890, 1000);
-  console.log("Scenario 1 passed");
+  if (bank.checkBalance(1234567890) === 4000) {
+    console.log("Scenario 1 passed");
+  } else {
+    console.log("Scenario 1 failed");
+  }
 } catch (e) {
   console.log("Scenario 1 failed");
 }
