@@ -112,6 +112,24 @@ export class Bank implements BankType {
     }
   }
 
+  depositMoney(accountNumber: number, amount: number): AccountType | undefined {
+    if (amount < 0) {
+      throw new Error("Amount cannot be negative");
+    }
+
+    if (this.isAccountNumberInvalid(accountNumber)) {
+      throw new Error("Invalid account number");
+    }
+
+    const account = this.findAccountById(accountNumber);
+    if (account) {
+      account.balance += amount;
+      return account;
+    } else {
+      throw new Error("Account not found");
+    }
+  }
+
   checkBalance(accountNumber: number): number {
     if (this.isAccountNumberInvalid(accountNumber)) {
       throw new Error("Invalid account number");
