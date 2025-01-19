@@ -99,6 +99,10 @@ export class Bank implements BankType {
       throw new Error("Invalid account number");
     }
 
+    if (!this.findAccountById(accountNumber)) {
+      throw new Error("Account not found");
+    }
+
     if ((this.findAccountById(accountNumber)?.balance as number) < amount) {
       throw new Error("Insufficient balance");
     }
@@ -115,6 +119,10 @@ export class Bank implements BankType {
   depositMoney(accountNumber: number, amount: number): AccountType | undefined {
     if (amount < 0) {
       throw new Error("Amount cannot be negative");
+    }
+
+    if (!this.findAccountById(accountNumber)) {
+      throw new Error("Account not found");
     }
 
     if (this.isAccountNumberInvalid(accountNumber)) {
