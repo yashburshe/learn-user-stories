@@ -22,6 +22,13 @@ try {
   console.log("Scenario 1 failed");
 }
 
+try {
+  bank.depositMoney(9999999999, 1000);
+  console.log("Scenario 1 failed");
+} catch (e) {
+  console.log("Scenario 1 passed");
+}
+
 // Scenario 2 : unsuccessful deposit of money due to invalid account id
 
 try {

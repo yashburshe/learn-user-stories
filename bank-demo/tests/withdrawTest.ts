@@ -22,6 +22,13 @@ try {
   console.log("Scenario 1 failed");
 }
 
+try {
+  bank.withdrawMoney(1234567893, 1000);
+  console.log("Scenario 1 failed");
+} catch (e) {
+  console.log("Scenario 1 passed");
+}
+
 // Scenario 2 : unsuccessful withdrawal of money due to invalid account id
 
 try {
