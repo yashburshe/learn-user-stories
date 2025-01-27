@@ -5,6 +5,8 @@ const accounts = [
   { id: 2345678901, balance: 10000 },
 ];
 
+console.log("Bank Tests...");
+
 const usernames = ["user1", "user2"];
 
 const bank = new Bank(accounts, usernames);
